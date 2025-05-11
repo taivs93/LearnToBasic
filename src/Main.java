@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class Main {
-    static List<String> lastFiveCalculations = new LinkedList<>();
-    static Double lastResult;
-    static Scanner scanner = new Scanner(System.in);
+    private static final List<String> lastFiveCalculations = new LinkedList<>();
+    private static Double lastResult;
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int choice;
         while(true){
