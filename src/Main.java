@@ -16,29 +16,29 @@ public class Main {
                 double b = input();
                 calculationForm();
                 choice = scanner.nextInt();
-                switch (choice) {
-                    case 1:
+                Operation operation = Operation.getOperationFromValue(choice);
+                switch (operation) {
+                    case SUM:
                         sum(a,b);
                         break;
-                    case 2:
+                    case MINUS:
                         minus(a,b);
                         break;
-                    case 3:
+                    case MULTIPLY:
                         multiply(a,b);
                         break;
-                    case 4:
+                    case DIVIDE:
                         divide(a,b);
                         break;
-                    case 5:
+                    case MODULE:
                         module(a,b);
                         break;
-                    case 6:
+                    case POW:
                         pow(a,b);
                         break;
-                    case 7:
+                    case SQRT:
                         sqrt(a,b);
                         break;
-
                 }
             }
             else if (choice == 2) {
@@ -58,14 +58,10 @@ public class Main {
         System.out.print("Lựa chọn: ");
     }
     private static void calculationForm(){
-        System.out.println(" Chọn phép toán ");
-        System.out.println("1. Tổng");
-        System.out.println("2. Hiệu");
-        System.out.println("3. Tích");
-        System.out.println("4. Thương");
-        System.out.println("5. Lấy dư");
-        System.out.println("6. Lũy thừa");
-        System.out.println("7. Căn bậc 2");
+        System.out.println("Chọn phép toán ");
+        for (Operation operation : Operation.values()){
+            System.out.println(operation.getValue() + ". "+operation.getDescription());
+        }
         System.out.print("Lựa chọn: ");
     }
     private static double input(){
