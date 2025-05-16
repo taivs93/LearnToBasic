@@ -7,11 +7,11 @@ public enum Operation {
     POW(6,"Lũy thừa"),
     SQRT(7,"Căn bậc 2");
 
-    private int value;
+    private int choice;
     private String description;
 
-    Operation(int value, String description){
-        this.value = value;
+    Operation(int choice, String description){
+        this.choice = choice;
         this.description = description;
     }
 
@@ -19,13 +19,13 @@ public enum Operation {
         return description;
     }
 
-    public int getValue() {
-        return value;
+    public int getChoice() {
+        return choice;
     }
 
-    public static Operation getOperationFromValue(int value){
+    public static Operation getOperationFromChoice(int value){
         for (Operation operation : Operation.values()){
-            if (operation.getValue() == value) return operation;
+            if (operation.getChoice() == value) return operation;
         }
         throw new IllegalArgumentException("Phép toán không hợp lệ");
     }

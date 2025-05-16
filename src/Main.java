@@ -16,7 +16,7 @@ public class Main {
                 double b = input();
                 calculationForm();
                 choice = scanner.nextInt();
-                Operation operation = Operation.getOperationFromValue(choice);
+                Operation operation = Operation.getOperationFromChoice(choice);
                 switch (operation) {
                     case SUM:
                         sum(a,b);
@@ -60,7 +60,7 @@ public class Main {
     private static void calculationForm(){
         System.out.println("Chọn phép toán ");
         for (Operation operation : Operation.values()){
-            System.out.println(operation.getValue() + ". "+operation.getDescription());
+            System.out.println(operation.getChoice() + ". "+operation.getDescription());
         }
         System.out.print("Lựa chọn: ");
     }
